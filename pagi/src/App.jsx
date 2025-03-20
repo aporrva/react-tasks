@@ -43,7 +43,7 @@ function App() {
           console.log(skip)
         }}> Next </button>
         <button className='bg-blue-800 p-[10%]' onClick={() => {
-          skip != 0 && setskip(skip - parseInt(skipvalue))
+          skip > 1 && setskip(skip - parseInt(skipvalue))
           console.log(skip)
         }}>Previous</button>
       </div>

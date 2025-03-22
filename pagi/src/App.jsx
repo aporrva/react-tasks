@@ -11,15 +11,16 @@ function App() {
   useEffect(() => {
     fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`).then((res) => res.json()).then((data) => setData(data))
   }, [skip])
+  console.log(Data)
   return (
     <div className='flex flex-col items-center p-[10%] '>
       <div className='p-[5%] flex flex-col gap-2  bg-yellow-100 w-full m-[5%] text-center'>
         {Data?.products.map((ele) =>
           <div className='bg-pink-200'>
-            <div>
+            <div key={ele.id}>
               Product Name: {ele.title}
             </div>
-            <div>
+            <div key={ele.id}>
               Price: {ele.price} Rs.
             </div>
           </div>
